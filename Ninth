@@ -1,0 +1,51 @@
+Introduction – PL/SQL bridges the gap between database technology and procedural programming languages. It can be thought of as a development tool that extends the facilities of Oracles SQL database language. Via PL/SQL you can insert, delete, update and retrieve table data as well as use procedural techniQuestions such as writing loops or branching to another block of code.
+
+PL/SQL Block structure-
+
+DECLARE
+Declarations of memory variables used later
+BEGIN
+SQL executable statements for manipulating table data.
+EXCEPTIONS
+SQL and/or PL.SQL code to handle errors.
+END;
+
+
+
+Displaying user Messages on the screen –  Any programming tool requires a method through which messages can be displayed to the user.
+
+
+
+dbms_output is a package that includes a number of procedure and functions that accumulate information in a buffer so that it can be retrieved later. These functions can also be used to display message to the user.
+put_line: put a piece of information in the buffer followed by a end of line marker. It can also be used to display message to the user.
+Setting the server output on:
+
+SET SERVER OUTPUT ON:
+
+Example: Write the following  code in the PL/SQL block to display message to user
+DBMS_OUTPUT.PUT_LINE(‘Display user message’);
+
+Conditional control in PL/SQL-
+Syntax:
+IF <condition> THEN
+<Action>
+ELSEIF<condition>
+<Action>
+ELSE
+<Action>
+ENDIF;
+The WHILE LOOP:
+Syntax:
+WHILE <condition>
+LOOP
+<Action>
+END LOOP;
+
+The FOR LOOP statement:
+Syntax:
+FOR variable IN [REVERSE] start—end
+LOOP
+<Action>
+END LOOP;
+
+The GOTO statement: The goto statement allows you to change the flow of control within a PL/SQL Block.

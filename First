@@ -1,0 +1,172 @@
+1) SQL - Create Table in the Database
+
+SYNTAX:--
+CREATE TABLE table_name(
+    column_name1 data_type [NULL|NOT NULL],
+    column_name2 data_type [NULL|NOT NULL],
+    ...
+);
+
+FOR EXAMPLE :--
+CREATE TABLE Employee(
+    EmpId number PRIMARY KEY,
+    FirstName varchar2(20),
+    LastName varchar2(20),
+    Email varchar2(25),
+    PhoneNo varchar2(25),
+    Salary number(8)
+);
+
+
+
+2)SQL - ALTER TABLE
+
+   2.1)Add Columns in the Table
+   
+   SYNTAX :--
+   ALTER TABLE table_name 
+   ADD column_name1 data_type,
+    column_name2 data_type,
+    ...   
+    
+    FOR EXAMPLE:--
+    ALTER TABLE Employee 
+    ADD Address VARCHAR(100),
+    City VARCHAR(25),
+    PinCode integer;
+    
+    
+    2.2)Drop column in the table
+    
+     SYNTAX:--
+     ALTER TABLE table_name
+     DROP COLUMN column_name;
+    
+    FOR EXAMPLE:--
+    ALTER TABLE Employee 
+     DROP COLUMN PinCode;
+     
+    2.3) Rename column in the table
+       
+       SYNTAX:--
+       ALTER TABLE table_name 
+       RENAME COLUMN old_name to new_name;    
+       
+       FOR EXAMPLE:--
+       ALTER TABLE  Employee 
+       RENAME COLUMN EmpId to Emp_ID;    
+       
+3) Rename Table
+
+     SYNTAX:--
+     RENAME old_name TO new_name;
+     
+     FOR EXAMPLE:--
+     RENAME Employee TO TempEmployee;
+       
+       
+4) Truncate Table 
+     
+     SYNTAX:--
+     TRUNCATE TABLE table_name;  
+     
+      FOR EXAMPLE:--
+      TRUNCATE TABLE Employee;  
+      
+5) Drop Table 
+
+     SYNTAX:--
+     DROP TABLE table_name;
+     
+     FOR EXAMPLE:--
+     DROP TABLE Employee;
+     
+     
+ 6) Insert Statement 
+ 
+     SYNTAX:--
+     INSERT INTO table_name  
+     VALUES (value1, value2, value3....);  
+                       OR
+                       
+    INSERT INTO table_name (column1, column2, column3....)  
+    VALUES (value1, value2, value3.....);  
+    
+    
+    FOR EXAMPLE:--
+    INSERT INTO Employee
+    VALUES(1,'John','King','john.king@abc.com','123.123.1834',33000);
+                                
+                                OR
+                                
+    INSERT INTO Employee(EmpId, FirstName, LastName)
+    VALUES(2,'James','Bond');
+    
+    
+    
+ 7) SQL SELECT Statement
+ 
+    SYNTAX:--
+    SELECT column1, column2, ...
+    FROM table_name;
+    
+                      OR
+                      
+    SELECT * FROM table_name;
+    
+     FOR EXAMPLE:--
+     SELECT CustomerName, City FROM Customers;
+                        OR
+     SELECT * FROM Employee;                   
+    
+    
+    SYNTAX:--
+    SELECT DISTINCT column1, column2, ...
+    FROM table_name;
+               
+    FOR EXAMPLE:--
+    SELECT DISTINCT Country FROM Customers;
+
+
+
+8)SQL UPDATE Statement
+
+     
+    SYNTAX:--
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+    
+    
+    FOR EXAMPLE:--
+    UPDATE Customers
+    SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+    WHERE CustomerID = 1;
+ 
+ 
+ 9)SQL DELETE Statement
+ 
+    SYNTAX:--
+    DELETE FROM table_name
+    WHERE condition;
+    
+    FOR EXAMPLE:--
+    DELETE FROM Customers
+    WHERE CustomerName='Alfreds Futterkiste';
+    
+    
+ 10)SQL DROP TABLE Statement
+ 
+    SYNTAX:--
+    DROP TABLE table_name;
+    
+    
+    FOR EXAMPLE:--
+    DROP TABLE Shippers;
+    
+    
+    
+    
+
+
+

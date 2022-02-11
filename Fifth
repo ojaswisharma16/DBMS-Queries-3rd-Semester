@@ -1,0 +1,110 @@
+JOIN means to combine something. In case of SQL, JOIN means "to combine two or more tables".
+
+In SQL, JOIN clause is used to combine the records from two or more tables in a database.
+
+Types of SQL JOIN--
+
+1)INNER JOIN
+2)LEFT OUTER JOIN
+3)RIGHT OUTER JOIN
+4)FULL OUTER JOIN
+
+
+
+1. INNER JOIN---
+
+In SQL, INNER JOIN selects records that have matching values in both tables as long as the condition is satisfied. It returns the combination of all rows from both the tables where the condition satisfies.
+
+Syntax-
+
+SELECT table1.column1, table1.column2, table2.column1,....  
+FROM table1   
+INNER JOIN table2  
+ON table1.matching_column = table2.matching_column;  
+
+Query-
+
+SELECT EMPLOYEE.EMP_NAME, PROJECT.DEPARTMENT   
+FROM EMPLOYEE  
+INNER JOIN PROJECT  
+ON PROJECT.EMP_ID = EMPLOYEE.EMP_ID;  
+
+
+
+2. LEFT OUTER JOIN----
+
+The SQL left join returns all the values from left table and the matching values from the right table. If there is no matching join value, it will return NULL.
+
+Syntax-
+
+SELECT table1.column1, table1.column2, table2.column1,....  
+FROM table1   
+LEFT JOIN table2  
+ON table1.matching_column = table2.matching_column; 
+
+
+Query-
+
+SELECT EMPLOYEE.EMP_NAME, PROJECT.DEPARTMENT   
+FROM EMPLOYEE  
+LEFT JOIN PROJECT  
+ON PROJECT.EMP_ID = EMPLOYEE.EMP_ID;  
+
+
+
+3. RIGHT OUTER  JOIN---
+
+In SQL, RIGHT JOIN returns all the values from the values from the rows of right table and the matched values from the left table. If there is no matching in both tables, it will return NULL.
+
+Syntax-
+
+SELECT table1.column1, table1.column2, table2.column1,....  
+FROM table1   
+RIGHT JOIN table2  
+ON table1.matching_column = table2.matching_column;  
+
+Query-
+
+SELECT EMPLOYEE.EMP_NAME, PROJECT.DEPARTMENT   
+FROM EMPLOYEE  
+RIGHT JOIN PROJECT  
+ON PROJECT.EMP_ID = EMPLOYEE.EMP_ID;  
+
+
+4. FULL OUTER JOIN---
+
+In SQL, FULL JOIN is the result of a combination of both left and right outer join. Join tables have all the records from both tables. It puts NULL on the place of matches not found.
+
+Syntax-
+
+SELECT table1.column1, table1.column2, table2.column1,....  
+FROM table1   
+FULL JOIN table2  
+ON table1.matching_column = table2.matching_column;  
+
+Query-
+
+SELECT EMPLOYEE.EMP_NAME, PROJECT.DEPARTMENT   
+FROM EMPLOYEE  
+FULL JOIN PROJECT   
+ON PROJECT.EMP_ID = EMPLOYEE.EMP_ID;  
+
+
+
+5. SELF JOIN----
+
+A self join is a regular join , but the table is joined with itself.
+
+Syntax-
+
+SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;
+
+Query-
+
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City
+ORDER BY A.City;

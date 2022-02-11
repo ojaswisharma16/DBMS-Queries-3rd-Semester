@@ -1,0 +1,112 @@
+Modifying the Structure of Tables- Alter table command is used to changing the structure of a table. Using the alter table clause you cannot perform the following tasks:
+
+(i)	change the name of table
+(ii)	change the name of column
+(iii)	drop a column
+(iv)	decrease the size of a table if table data exists.
+
+The following tasks you can perform through alter table command.
+
+(i)	Adding new columns:--
+
+Syntax 
+ALTER TABLE tablename
+ADD (newcolumnname newdatatype (size));
+
+FOR EXAMPLE:--
+    ALTER TABLE Employee 
+    ADD Address VARCHAR(100),
+    City VARCHAR(25),
+    PinCode integer;
+    
+    
+    
+
+(ii)	Modifying existing table:--
+
+Syntax:
+ALTER TABLE tablename
+MODIFY (newcolumnname newdatatype (size));
+
+
+
+
+(iii)Rename column in the table:--
+       
+       SYNTAX:--
+       ALTER TABLE table_name 
+       RENAME COLUMN old_name to new_name;    
+       
+       FOR EXAMPLE:--
+       ALTER TABLE  Employee 
+       RENAME COLUMN EmpId to Emp_ID;   
+       
+       
+
+NOTE: Oracle not allow constraints defined using the alter table, if the data in the table, violates such constraints.
+
+
+
+
+
+
+Removing/Deleting Tables- Following command is used for removing or deleting a table.
+
+Syntax:
+DROP TABLE tabename:
+
+ FOR EXAMPLE:--
+     DROP TABLE Employee;
+     
+     
+     
+     
+     
+
+Defining Integrity constraints in the ALTER TABLE command-
+
+You can also define integrity constraints using the constraint clause in the ALTER TABLE command. The following examples show the definitions of several integrity constraints.
+
+(1)	Add PRIMARY KEY-
+Syntax:
+ALTER TABLE tablename
+ADD PRIMARY KEY(columnname);
+
+For example-
+      CREATE TABLE Persons (
+    ID int NOT NULL PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+
+
+(2)	Add FOREIGN KEY-
+Syntax:
+ALTER TABLE tablename
+ADD CONSTRAINT constraintname 
+FOREIGN KEY(columnname) REFERENCES tablename;
+
+For exam-
+    CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+
+Droping integrity constraints in the ALTER TABLE command:--
+
+You can drop an integrity  constraint if the rule that if enforces is no longer true or if the constraint is no longer needed. Drop the constraint using the ALTER TABLE command with the DROP clause. The following examples illustrate the droping of integrity constraints.
+
+(1)	DROP the PRIMARY KEY-
+Syntax:
+ALTER TABLE tablename
+DROP PRIMARY KEY
+
+(2)	DROP FOREIGN KEY-
+Syntax:
+ALTER TABLE tablename
+DROP CONSTRAINT constraintname;
+ 

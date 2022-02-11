@@ -1,0 +1,34 @@
+Grouping Data From Tables:--
+
+ There are circumstances where we would like to apply the aggregate function not only to a single set of tuples, but also to a group of sets of tuples, we specify this wish in SQL using the group by clause. The attribute or attributes given in the group by clause are used to form group. Tuples with the same value on all attributes in the group by clause are placed in one group.
+ 
+ 
+I) GROUP BY Statement--
+
+Syntax:
+SELECT columnname, columnname
+FROM	 tablename
+GROUP BY columnname;
+
+Example:
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+
+At times it is useful to state a condition that applies to groups rather than to tuples. For example we might be interested in only those branches where the average account balance is more than 1200. This condition does not apply to a single tuple, rather it applies to each group constructed by the GROUP BY clause. To express such Questionry, we use the having clause of  SQL. SQL  applies predicates in the having may be used.
+
+
+II) HAVING Clause---
+
+Syntax:
+SELECT columnname, columnname
+FROM	 tablename
+GROUP BY columnname;
+HAVING searchcondition;
+
+Example:
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;

@@ -1,0 +1,138 @@
+Constraints are the rules enforced on the data columns of a table. These are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.
+
+Constraints could be either on a column level or a table level. The column level constraints are applied only to one column, whereas the table level constraints are applied to the whole table.
+
+Following are some of the most commonly used constraints available in SQL. These constraints have already been discussed in SQL - RDBMS Concepts chapter, but it’s worth to revise them at this point.
+
+1)NOT NULL Constraint − Ensures that a column cannot have NULL value.
+
+2)DEFAULT Constraint − Provides a default value for a column when none is specified.
+
+3)UNIQUE Constraint − Ensures that all values in a column are different.
+
+4)PRIMARY Key − Uniquely identifies each row/record in a database table.
+
+5)FOREIGN Key − Uniquely identifies a row/record in any of the given database table.
+
+6)CHECK Constraint − The CHECK constraint ensures that all the values in a column satisfies certain conditions.
+
+7)INDEX − Used to create and retrieve data from the database very quickly
+
+
+
+
+1) NOT NULL----
+   
+   Syntax-
+   
+   CREATE TABLE table_name(
+   column_name data_type(size) NOT NULL);
+   
+   For example-
+   
+   CREATE TABLE CUSTOMERS(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+
+
+
+2) DEFAULT----
+    
+    
+    Syntax-
+    CREATE TABLE table_name(
+    column_name datatype(size) DEFAULT value,...);
+    
+     For example-
+     CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Sandnes'
+);
+
+
+3) UNIQUE----
+   
+    Syntax-
+    CREATE TABLE table_name(
+    column_name datatype size UNIQUE);
+    
+    
+     For example-
+     CREATE TABLE Persons (
+    ID int NOT NULL UNIQUE,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+
+4) Primary Key---
+
+   Syntax-
+    CREATE TABLE table_name(
+    column_name datatype (size) PRIMARY KEY);
+    
+    
+    For example-
+      CREATE TABLE Persons (
+    ID int NOT NULL PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+
+5) FOREIGN KEY---
+
+   
+   SYNTAX-
+   CREATE TABLE table_name(
+    column_name datatype (size) FOREIGN KEY REFERENCES anotherTableName(column_name));
+    
+    
+    For exam-
+    CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+
+6)CHECK----
+
+    Syntax-
+    CREATE TABLE table_name(
+    column_name datatype (size) CHECK (condition));
+    
+    
+    For exam-
+    CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age>=18)
+);
+
+
+
+7)INDEX-----
+
+   Syntax-
+   CREATE INDEX index_name
+   ON table_name (column1, column2, ...);
+   
+    For exam-
+    CREATE UNIQUE INDEX index_name
+    ON table_name (column1, column2, ...);
+    
+    
+    
+   

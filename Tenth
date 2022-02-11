@@ -1,0 +1,99 @@
+# Cursor– We have seen how oracle executes an SQL statement. Oracle DBA uses a work area for its internal processing. This work area is private to SQL’s operation and is called a cursor.
+The data that is stored in the cursor is called the Active Data set. The size of the cursor in memory is the size required to hold the number of rows in the Active Data Set.
+
+
+# Explicit Cursor-  You can explicitly declare a cursor to process the rows individually. A cursor declared by the user is called Explicit Cursor. For Questionries that return more than one row, You must declare a cursor explicitly.
+The data that is stored in the cursor is called the Active Data set. The size of the cursor in memory is the size required to hold the number of rows in the Active
+
+
+# Why use an Explicit Cursor-  Cursor can be used when the user wants to process data one row at a time.
+
+
+# Explicit Cursor Management-  The steps involved in declaring a cursor and manipulating data in the active data set are:-
+•	Declare a cursor that specifies the SQL select statement that you want to process.
+•	Open the Cursor.
+•	Fetch the data from the cursor one row at a time.
+•	Close the cursor.
+
+
+# Explicit Cursor Attributes-  Oracle provides certain attributes/ cursor variables to control the execution of the cursor. Whenever any cursor(explicit or implicit) is opened and used Oracle creates a set of four system variables via which Oracle keeps track of the ‘Current’  status of the cursor. You 
+•	Declare a cursor that specifies the SQL select statement that you want to process.
+•	Open the Cursor.
+•	Fetch the data from the cursor one row at a time.
+•	Close the cursor.
+
+
+# How to Declare the Cursor:-
+
+The General Syntex  to create any perticular cursor is as follows:-
+Cursor <Cursorname> is Sql Statement;
+
+
+# How to Open the Cursor:-
+
+The General Syntex  to Open any perticular cursor is as follows:-
+Open Cursorname;
+
+
+#Fetching a record From the Cursor:-
+The fetch statement retrieves the rows from the active set to the variables one at a time. Each time a fetch is executed. The focus of the DBA cursor advances to the next row in the Active set.
+One can make use of any loop structute(Loop-End Loop along with While,For) to fetch the records from the cursor into variable one row at a time.
+
+
+The General Syntex  to Fetch the records from the cursor is as follows:-
+Fetch cursorname into variable1,variable2,______
+
+
+
+# Closing a Cursor:-
+
+The General Syntex  to Close the cursor is as follows:-
+Close <cursorname>;
+
+											
+# Database Triggers:-
+Database triggers are procedures that are stored in the database and are implicitly executed(fired) when the contents of a table are changed.
+
+
+# Use of Database Triggers:-
+Database triggers support Oracle to provide a highly customized database management system. Some of the uses to which the database triggers can be put to customize management information in Oracle are as follows:-
+•	A Trigger can permit DML statements against a table anly if they are issued, during regular bussiness hours or on predetermined weekdays.
+•	A trigger can also be used to keep an audit trail of a table along with the operation performed and the time on which the operation was performed.
+•	It can be used to prevent invalid transactions.
+•	Enforce complex security authorizations.
+
+
+# How to apply DataBase Triggers:-
+A trigger has three basic parts:-
+1.	A triggering event or ststement.
+2.	A triger restriction
+3.	A trigger action.
+
+
+# Types of Triggers:-
+
+Using the various options , four types of triggers can be created:-
+1.	Before Statement Trigger:- Before executing the triggering statement, the trigger action is executed.
+2.	Before Row Trigger:-  Before modifying the each row affected by the triggering statement and before appropriate integrity constraints, the trigger is executed if the trigger restriction either evaluated to TRUE or was not included.’
+3.	After Ststement Trigger:- After executing the triggering statement and applying any deferred integrity canstraints, the trigger action is executed.
+4.	After row Trigger:- After modifying each row affected by the triggering statement and possibly applying appropriate integrity constraints, the trigger action is executed for the current row if the trigger restriction either evaluates to TRUE or was not included.
+
+
+# Syntax For Creating Trigger:-
+The syntex for Creating the Trigger is as follows:-
+
+Create or replace Trigger<Triggername> {Before,After} {Delete, Insert, Update } On <Tablename> For Each row when Condition
+Declare
+<Variable declarations>;
+<Constant Declarations>;
+Begin
+<PL/SQL> Subprogram Body;
+Exception
+Exception Pl/SQL block;
+End;
+
+
+# How to Delete a Trigger:-
+
+The syntex for Deleting the Trigger is as follows:-
+Drop Trigger <Triggername>;

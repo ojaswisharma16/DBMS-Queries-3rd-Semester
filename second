@@ -1,0 +1,73 @@
+List of DML commands: 
+
+
+SELECT : It retrieve data from the table.
+INSERT : It is used to insert data into a table.
+UPDATE: It is used to update existing data within a table.
+DELETE : It is used to delete records from a database table.
+LOCK: Table control concurrency.
+CALL: Call a PL/SQL or JAVA subprogram.
+EXPLAIN PLAN: It describes the access path to data.
+
+
+
+1) SELECT--
+    
+        SELECT is the most important data manipulation command in Structured Query Language. The SELECT command shows the records of the specified table. It also shows the particular record of a particular column by using the WHERE clause.
+     
+     
+     Syntax -
+     SELECT column_Name_1, column_Name_2, ….., column_Name_N
+     FROM Name_of_table;  
+                          OR
+     SELECT * FROM table_name;  
+     
+     
+     For Exam-
+     SELECT Emp_Id, Emp_Salary FROM Employee;  
+                                    OR
+        SELECT * FROM Student;                              
+     
+     
+ 2) INSERT --
+ 
+      Syntax-
+      INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)  
+      VALUES (value1, value2, value3,...valueN);
+                                             OR
+       INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
+       
+       For exam-
+       INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+       VALUES (1, 'Ramesh', 32, 'Ahmedabad', 2000.00 );
+
+       INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+       VALUES (2, 'Khilan', 25, 'Delhi', 1500.00 );  
+                                                         OR
+       INSERT INTO CUSTOMERS 
+       VALUES (7, 'Muffy', 24, 'Indore', 10000.00 );
+       
+       
+       
+  3) UPDATE--
+  
+     SYNTAX:--
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+    
+    
+    FOR EXAMPLE:--
+    UPDATE Customers
+    SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+    WHERE CustomerID = 1;
+ 
+ 4) DELETE--
+ 
+    SYNTAX:--
+    DELETE FROM table_name
+    WHERE condition;
+    
+    FOR EXAMPLE:--
+    DELETE FROM Customers
+    WHERE CustomerName='Alfreds Futterkiste';
